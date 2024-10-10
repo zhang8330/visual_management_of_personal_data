@@ -1,15 +1,34 @@
+<template>
+  <header>
+    <div>
+      <ul>
+        <li><NuxtLink to="/">访问index</NuxtLink></li>
+        <li><NuxtLink to="/login">访问login</NuxtLink></li>
+        <li><NuxtLink to="/user">访问user</NuxtLink></li>
+        <li> <NuxtLink to="/about">访问about</NuxtLink></li>
+      </ul>
+    </div>
+  </header>
+  <main>
+    <div>
+      {{name}}
+      <el-button type="primary" @click="test">click</el-button>
+      <NuxtPage></NuxtPage>
+    </div>
+  </main>
+  <footer>
+    底部
+  </footer>
+</template>
 <script setup>
-  const name = ref("aaa");
-  console.log("哈哈哈1");
-  const test = ()=>{
-    console.log("test执行");
-  }
-  for(let i = 1;i <= 2;i++)alert(`执行了${i}次`);
+console.log("import:",import.meta);
 </script>
 
-<template>
-  <div>
-    {{name}}
-    <button type="primary" @click="test">click</button>
-  </div>
-</template>
+<style lang="scss" scoped>
+header, main, footer{
+  border:1px solid black;
+}
+  h2{
+    color:$h1Color;
+  }
+</style>
